@@ -29,7 +29,7 @@ buildscript {
         nexusPublishUsername = project.hasProperty("nexusPublishUsername") ? project.getProperty("nexusPublishUsername") : ""
         nexusPublishPassword = project.hasProperty("nexusPublishPassword") ? project.getProperty("nexusPublishPassword") : ""
         applicationDefaultJvmArgs = [
-                "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006"
+                '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006'
         ]
         dockerOauthToken = 'gcloud -q auth print-access-token'.execute().text.trim()
     }
