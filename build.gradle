@@ -139,39 +139,5 @@ dependencies {
             "org.testcontainers:testcontainers:${testContainerVersion}",
     )
 }
-sonarqube {
-    properties {
-        property "sonar.projectVersion", version.split('-')[0]
-        property "sonar.language", "java"
-        property "sonar.scm.disabled", "true"
-        property "sonar.core.coveragePlugin", "Jacoco"
-    }
-}
-test {
-    finalizedBy = [jacocoTestReport, check]
-    systemProperties = ["spring.profiles.active": "test, test-overrides"]
-    useJUnitPlatform()
-    testLogging {
-        exceptionFormat = 'full'
-        events "passed", "skipped", "failed", "standardOut", "standardError"
-    }
-}
-tasks.withType(JavaCompile).configureEach {
-    options.compilerArgs << '-Xlint:all,-cast,-deprecation,-processing,-rawtypes,-serial,-static,-unchecked' << '-Werror'
-}
-bootRun {
-    gradle.taskGraph.whenReady { taskGraph ->
-        if (taskGraph.hasTask(bootRun)) {
-            try {
-                def response = 'curl https://icanhazdadjoke.com/'.execute().text
-                error += '*' * response.length()
-                error += '\n' + response + '\n'
-                error += '*' * response.length()
-            } catch (e) {
-                error += 'Error 404 Dad Joke Not Found Searching Dad-A-Base'
-            }
-            throw new GradleException(error)
-        }
-    }
-}
+
 
