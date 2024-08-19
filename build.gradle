@@ -176,11 +176,6 @@ tasks.withType(JavaCompile).configureEach {
 bootRun {
     gradle.taskGraph.whenReady { taskGraph ->
         if (taskGraph.hasTask(bootRun)) {
-            def error = '''
-Standalone DEV is no longer supported. Please use dev in the cloud for local development.
-To discourage further use of this function, you will be presented with a bad dad joke each time you run it!
-    
-'''
             try {
                 def response = 'curl https://icanhazdadjoke.com/'.execute().text
                 error += '*' * response.length()
