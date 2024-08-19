@@ -208,19 +208,6 @@ def buildType = System.env.BUILD_NUMBER ? "JENKINS" : "LOCAL"
 
 tasks.register('versionProp') {
     onlyIf { true }
-    doLast {
-        new File("$project.buildDir/gcpBuildVersion.properties").text = """
-APPLICATION="hyrax"
-VERSION=${project.version}
-BUILD=${buildNumber}
-BRANCH=${gcpGitbranch}
-GIT_HASH=${githash}
-TAG_FULL=${dockerTag}
-TAG=${dockerTagShort}
-TIMESTAMP=${new Date().format('yyyy-MM-dd HH:mm:ss')}
-BUILD_TYPE=${buildType}
-"""
-    }
 }
 generateGitProperties.finalizedBy versionProp
 jib {
