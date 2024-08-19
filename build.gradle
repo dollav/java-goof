@@ -53,8 +53,7 @@ java {
         languageVersion = JavaLanguageVersion.of(17)
     }
 }
-ext.githash = 'git rev-parse --short HEAD'.execute().text.trim()
-ext.virtualHostVersion = version.replaceAll('(\\d+\\.\\d+\\.\\d+)(\\..*)?', '$1').replaceAll("\\.", "-")
+
 jacoco {
     toolVersion = "0.8.8"
 }
