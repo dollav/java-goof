@@ -25,9 +25,6 @@ buildscript {
         junitVersion = '5.10.1'
         testContainerVersion = '1.19.3'
         nexus = 'https://nexus.i.xmatters.com/repository/maven-public/'
-        applicationDefaultJvmArgs = [
-                '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006'
-        ]
         dockerOauthToken = 'gcloud -q auth print-access-token'.execute().text.trim()
     }
     repositories {
