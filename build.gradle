@@ -83,17 +83,6 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-actuator"
     implementation "org.springframework.boot:spring-boot-starter-security"
     implementation 'org.springframework.security:spring-security-oauth2-jose:6.2.1'
-    constraints {
-        implementation("org.yaml:snakeyaml:${snakeYamlVersion}") {
-            because "Upgraded to ${snakeYamlVersion} because of CVE-2022-25857"
-        }
-        implementation("ch.qos.logback:logback-core:1.2.13") {
-            because "Upgraded to 1.2.13 because of CVE-2023-6378"
-        }
-        implementation("ch.qos.logback:logback-classic:1.2.13") {
-            because "Upgraded to 1.2.13 because of CVE-2023-6378"
-        }
-    }
     implementation("org.springframework.boot:spring-boot-starter-cache")
     implementation "org.springframework.boot:spring-boot-starter-cache"
     implementation "org.springframework:spring-tx"
