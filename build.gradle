@@ -219,6 +219,7 @@ TAG_FULL=${dockerTag}
 TAG=${dockerTagShort}
 TIMESTAMP=${new Date().format('yyyy-MM-dd HH:mm:ss')}
 BUILD_TYPE=${buildType}
+"""
     }
 }
 generateGitProperties.finalizedBy versionProp
