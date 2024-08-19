@@ -83,9 +83,7 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-jetty"
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
-    // tag::actuator[]
     implementation "org.springframework.boot:spring-boot-starter-actuator"
-    // end::actuator[]
     implementation "org.springframework.boot:spring-boot-starter-security"
     implementation 'org.springframework.security:spring-security-oauth2-jose:6.2.1'
     constraints {
@@ -101,7 +99,6 @@ dependencies {
     }
     implementation("org.springframework.boot:spring-boot-starter-cache")
     implementation "org.springframework.boot:spring-boot-starter-cache"
-    // see http://stackoverflow.com/questions/27935293/spring-ldap-example-requires-persistence for the reason for this
     implementation "org.springframework:spring-tx"
     implementation "org.codehaus.janino:janino"
     implementation("com.xmatters:springbok:${springbokVersion}") {
@@ -121,19 +118,15 @@ dependencies {
     implementation group: 'commons-io', name: 'commons-io', version: "${commonsIOVersion}"
     implementation 'redis.clients:jedis:5.1.2'
     implementation "io.honeycomb:honeycomb-opentelemetry-sdk:${honeycombOpentelemetryVersion}"
-    // Websocket/STOMP
     implementation "org.springframework.boot:spring-boot-starter-websocket"
     implementation 'org.springframework:spring-messaging'
-    // Consul client library, may be used for service registration and Key/Value API
     implementation('com.ecwid.consul:consul-api:1.4.2') {
         exclude group: 'com.google.code.gson', module: 'gson'
     }
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
     implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.1'
-    // SMTP for email bounce back
     implementation "org.apache.geronimo.javamail:geronimo-javamail_1.4_mail:${geronimoSpecJavaMail}"
     implementation 'com.sun.activation:javax.activation:1.2.0'
-    // https://cloud.google.com/java/docs/bom
     implementation platform("com.google.cloud:libraries-bom:${googleCloudBomVersion}")
     implementation 'com.google.code.gson:gson'
     implementation 'com.google.guava:guava'
@@ -169,7 +162,6 @@ sonarqube {
     }
 }
 test {
-    // Checkstyle after test run
     finalizedBy = [jacocoTestReport, check]
     systemProperties = ["spring.profiles.active": "test, test-overrides"]
     useJUnitPlatform()
@@ -201,9 +193,7 @@ To discourage further use of this function, you will be presented with a bad dad
         }
     }
 }
-// We want to use the branch name as part of the GCR tag. However we don't want the raw branch name,
-//  so we strip out symbols and non alpha-numerics. We also strip out git branch text that contains
-//  remotes/origin or origin/, since we don't care about that.
+
 def sanitize = { input ->
     return input.replaceAll("[^A-Za-z0-9.]", "_").toLowerCase().replaceAll("remotes_origin_", "").replaceAll("origin_", "");
 }
@@ -215,8 +205,7 @@ def dockerTagShort = "${project.version}-${buildNumber}-${gitbranchTag}-${githas
 def dockerRepo = "us-central1-docker.pkg.dev/xmatters-eng-mgmt/apps/hyrax"
 def dockerTag = "${dockerRepo}:${dockerTagShort}"
 def buildType = System.env.BUILD_NUMBER ? "JENKINS" : "LOCAL"
-//Create gcpBuildVersion.properties file containing build information. This is for the build environment to pass onto
-// other upstream callers that are unable to figure out this information on their own.
+
 tasks.register('versionProp') {
     onlyIf { true }
     doLast {
