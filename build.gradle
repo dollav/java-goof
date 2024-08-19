@@ -175,18 +175,3 @@ bootRun {
     }
 }
 
-def sanitize = { input ->
-    return input.replaceAll("[^A-Za-z0-9.]", "_").toLowerCase().replaceAll("remotes_origin_", "").replaceAll("origin_", "");
-}
-def buildNumber = System.env.BUILD_NUMBER ?: "1"
-def gcpGitbranch = 'git name-rev --name-only HEAD'.execute().text.trim()
-def githash = 'git rev-parse --short HEAD'.execute().text.trim()
-def gitbranchTag = sanitize(gcpGitbranch)
-def dockerTagShort = "${project.version}-${buildNumber}-${gitbranchTag}-${githash}"
-def dockerRepo = "us-central1-docker.pkg.dev/xmatters-eng-mgmt/apps/hyrax"
-def dockerTag = "${dockerRepo}:${dockerTagShort}"
-def buildType = System.env.BUILD_NUMBER ? "JENKINS" : "LOCAL"
-
-tasks.register('versionProp') {
-    onlyIf { true }
-}
