@@ -1,0 +1,284 @@
+buildscript {
+    ext {
+        projectName = 'hyrax'
+        projectVersion = version
+        buildNumber = System.env.BUILD_NUMBER ?: "1"
+        arch = 'noarch'
+        awaitilityVersion = '4.1.0'
+        commonsCollection4Version = '4.4'
+        commonsIOVersion = '2.8.0'
+        commonsLang3Version = '3.12.0'
+        ehcacheVersion = '3.8.1'
+        geronimoSpecJavaMail = '1.8.4'
+        googleCloudBomVersion = '26.42.0'
+        gradleGitPropertiesVersion = '2.3.2'
+        httpBuilderVersion = '0.6'
+        httpClientVersion = '5.2.3'
+        honeycombOpentelemetryVersion = '1.5.2'
+        janinoVersion = '3.1.10'
+        javaxCacheVersion = '1.1.1'
+        lombokPluginVersion = '5.3.3.3'
+        mockitoVersion = '3.12.3'
+        snakeYamlVersion = '1.33'
+        sonarQubePluginVersion = '2.6.2'
+        springBootAdminVersion = '3.2.3'
+        springBootVersion = '3.2.5'
+        junitVersion = '5.10.1'
+        testContainerVersion = '1.19.3'
+        nexus = 'https://nexus.i.xmatters.com/repository/maven-public/'
+        nexusPublishUsername = project.hasProperty("nexusPublishUsername") ? project.getProperty("nexusPublishUsername") : ""
+        nexusPublishPassword = project.hasProperty("nexusPublishPassword") ? project.getProperty("nexusPublishPassword") : ""
+        applicationDefaultJvmArgs = [
+                "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006"
+        ]
+        dockerOauthToken = 'gcloud -q auth print-access-token'.execute().text.trim()
+    }
+    repositories {
+        maven { url "${nexus}" }
+        mavenCentral()
+        mavenLocal()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+}
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'jacoco'
+    id 'checkstyle'
+    id 'org.springframework.boot' version "${springBootVersion}"
+    id 'org.sonarqube' version "${sonarQubePluginVersion}"
+    id 'com.gorylenko.gradle-git-properties' version "${gradleGitPropertiesVersion}"
+    id 'io.freefair.lombok' version "${lombokPluginVersion}"
+    id 'com.google.cloud.tools.jib' version '3.4.3'
+}
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+ext.githash = 'git rev-parse --short HEAD'.execute().text.trim()
+ext.virtualHostVersion = version.replaceAll('(\\d+\\.\\d+\\.\\d+)(\\..*)?', '$1').replaceAll("\\.", "-")
+jacoco {
+    toolVersion = "0.8.8"
+}
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "${nexus}" }
+}
+checkstyle {
+    configFile = new File(rootDir, "/gradle/xMattersFormatAndImportChecks.xml")
+    toolVersion = "5.9"
+}
+configurations.configureEach {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    exclude module: "spring-boot-starter-tomcat"
+    exclude module: "log4j"
+    exclude module: "log4j-api"
+    exclude module: "android-json"
+}
+dependencies {
+    implementation platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-jetty"
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
+    // tag::actuator[]
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
+    // end::actuator[]
+    implementation "org.springframework.boot:spring-boot-starter-security"
+    implementation 'org.springframework.security:spring-security-oauth2-jose:6.2.1'
+    constraints {
+        implementation("org.yaml:snakeyaml:${snakeYamlVersion}") {
+            because "Upgraded to ${snakeYamlVersion} because of CVE-2022-25857"
+        }
+        implementation("ch.qos.logback:logback-core:1.2.13") {
+            because "Upgraded to 1.2.13 because of CVE-2023-6378"
+        }
+        implementation("ch.qos.logback:logback-classic:1.2.13") {
+            because "Upgraded to 1.2.13 because of CVE-2023-6378"
+        }
+    }
+    implementation("org.springframework.boot:spring-boot-starter-cache")
+    implementation "org.springframework.boot:spring-boot-starter-cache"
+    // see http://stackoverflow.com/questions/27935293/spring-ldap-example-requires-persistence for the reason for this
+    implementation "org.springframework:spring-tx"
+    implementation "org.codehaus.janino:janino"
+    implementation("com.xmatters:springbok:${springbokVersion}") {
+        exclude group: 'org.bouncycastle', module: 'bcprov-jdk15on'
+    }
+    implementation("com.xmatters:customer-config-client:4.347.0")
+    implementation group: "com.xmatters", name: "xm-zuulproxy", version: "${xmZuulProxyVersion}", changing: true
+    implementation("org.apache.httpcomponents.client5:httpclient5:${httpClientVersion}")
+    implementation("org.apache.commons:commons-collections4:${commonsCollection4Version}")
+    implementation("org.apache.commons:commons-lang3:${commonsLang3Version}")
+    implementation 'io.prometheus:simpleclient:0.16.0'
+    implementation "de.codecentric:spring-boot-admin-starter-client:${springBootAdminVersion}"
+    implementation "com.xmatters:spring-boot-starter-xmatters:${xmSpringBootStarterVersion}"
+    implementation "org.ehcache:ehcache:${ehcacheVersion}"
+    implementation "javax.cache:cache-api:${javaxCacheVersion}"
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.1"
+    implementation group: 'commons-io', name: 'commons-io', version: "${commonsIOVersion}"
+    implementation 'redis.clients:jedis:5.1.2'
+    implementation "io.honeycomb:honeycomb-opentelemetry-sdk:${honeycombOpentelemetryVersion}"
+    // Websocket/STOMP
+    implementation "org.springframework.boot:spring-boot-starter-websocket"
+    implementation 'org.springframework:spring-messaging'
+    // Consul client library, may be used for service registration and Key/Value API
+    implementation('com.ecwid.consul:consul-api:1.4.2') {
+        exclude group: 'com.google.code.gson', module: 'gson'
+    }
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.1'
+    // SMTP for email bounce back
+    implementation "org.apache.geronimo.javamail:geronimo-javamail_1.4_mail:${geronimoSpecJavaMail}"
+    implementation 'com.sun.activation:javax.activation:1.2.0'
+    // https://cloud.google.com/java/docs/bom
+    implementation platform("com.google.cloud:libraries-bom:${googleCloudBomVersion}")
+    implementation 'com.google.code.gson:gson'
+    implementation 'com.google.guava:guava'
+    implementation 'com.google.cloud:google-cloud-pubsub'
+    implementation 'com.google.cloud:google-cloud-storage'
+    implementation 'com.google.cloud:google-cloud-tasks'
+    testImplementation "org.junit.vintage:junit-vintage-engine"
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testImplementation "org.mockito:mockito-inline:${mockitoVersion}"
+    testImplementation "org.awaitility:awaitility:${awaitilityVersion}"
+    testImplementation "com.github.codemonstur:embedded-redis:1.0.0"
+    // Needed for the HyraxAuthApiTestController and its associated configuration.
+    testImplementation('org.springframework.security:spring-security-oauth2-authorization-server:1.2.1')
+    testImplementation(platform('org.junit:junit-bom:5.10.2'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+    testRuntimeOnly('org.junit.platform:junit-platform-launcher')
+    testImplementation(
+            "com.redis:testcontainers-redis:2.0.1",
+            "org.junit.jupiter:junit-jupiter-api",
+            "org.junit.jupiter:junit-jupiter-params",
+            "org.mockito:mockito-junit-jupiter:${mockitoVersion}",
+            "org.springframework.boot:spring-boot-starter-test",
+            "org.testcontainers:junit-jupiter:${testContainerVersion}",
+            "org.testcontainers:testcontainers:${testContainerVersion}",
+    )
+}
+sonarqube {
+    properties {
+        property "sonar.projectVersion", version.split('-')[0]
+        property "sonar.language", "java"
+        property "sonar.scm.disabled", "true"
+        property "sonar.core.coveragePlugin", "Jacoco"
+    }
+}
+test {
+    // Checkstyle after test run
+    finalizedBy = [jacocoTestReport, check]
+    systemProperties = ["spring.profiles.active": "test, test-overrides"]
+    useJUnitPlatform()
+    testLogging {
+        exceptionFormat = 'full'
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+    }
+}
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs << '-Xlint:all,-cast,-deprecation,-processing,-rawtypes,-serial,-static,-unchecked' << '-Werror'
+}
+bootRun {
+    gradle.taskGraph.whenReady { taskGraph ->
+        if (taskGraph.hasTask(bootRun)) {
+            def error = '''
+Standalone DEV is no longer supported. Please use dev in the cloud for local development.
+To discourage further use of this function, you will be presented with a bad dad joke each time you run it!
+    
+'''
+            try {
+                def response = 'curl https://icanhazdadjoke.com/'.execute().text
+                error += '*' * response.length()
+                error += '\n' + response + '\n'
+                error += '*' * response.length()
+            } catch (e) {
+                error += 'Error 404 Dad Joke Not Found Searching Dad-A-Base'
+            }
+            throw new GradleException(error)
+        }
+    }
+}
+// We want to use the branch name as part of the GCR tag. However we don't want the raw branch name,
+//  so we strip out symbols and non alpha-numerics. We also strip out git branch text that contains
+//  remotes/origin or origin/, since we don't care about that.
+def sanitize = { input ->
+    return input.replaceAll("[^A-Za-z0-9.]", "_").toLowerCase().replaceAll("remotes_origin_", "").replaceAll("origin_", "");
+}
+def buildNumber = System.env.BUILD_NUMBER ?: "1"
+def gcpGitbranch = 'git name-rev --name-only HEAD'.execute().text.trim()
+def githash = 'git rev-parse --short HEAD'.execute().text.trim()
+def gitbranchTag = sanitize(gcpGitbranch)
+def dockerTagShort = "${project.version}-${buildNumber}-${gitbranchTag}-${githash}"
+def dockerRepo = "us-central1-docker.pkg.dev/xmatters-eng-mgmt/apps/hyrax"
+def dockerTag = "${dockerRepo}:${dockerTagShort}"
+def buildType = System.env.BUILD_NUMBER ? "JENKINS" : "LOCAL"
+//Create gcpBuildVersion.properties file containing build information. This is for the build environment to pass onto
+// other upstream callers that are unable to figure out this information on their own.
+tasks.register('versionProp') {
+    onlyIf { true }
+    doLast {
+        new File("$project.buildDir/gcpBuildVersion.properties").text = """
+APPLICATION="hyrax"
+VERSION=${project.version}
+BUILD=${buildNumber}
+BRANCH=${gcpGitbranch}
+GIT_HASH=${githash}
+TAG_FULL=${dockerTag}
+TAG=${dockerTagShort}
+TIMESTAMP=${new Date().format('yyyy-MM-dd HH:mm:ss')}
+BUILD_TYPE=${buildType}
+"""
+    }
+}
+generateGitProperties.finalizedBy versionProp
+jib {
+    from {
+        image = "us-central1-docker.pkg.dev/xmatters-eng-mgmt/base-containers/ibm-semeru-runtimes:xm-open-17.0.10_7-jre-jammy"
+    }
+    to {
+        image = "us-central1-docker.pkg.dev/xmatters-eng-mgmt/apps/hyrax"
+        tags = ['latest', dockerTagShort]
+    }
+    container {
+        entrypoint = ["/entrypoint.sh"]
+        mainClass = "com.xmatters.cloudagent.Application"
+        ports = ['8083']
+        containerizingMode = 'exploded'
+        environment = [
+                SERVICE               : "hyrax",
+                OTEL_JAVAAGENT_LOGGING: "application",
+                OTEL_JAVAAGENT_DEBUG  : "false",
+                OTEL_METRICS_EXPORTER : "none",
+                JVM_MEMORY : "-XX:MaxRAMPercentage=50",
+                JVM_PARAMS : "-XshowSettings:vm -Xshareclasses:cacheDir=/opt/xmatters/jvmclassescache/hyrax,name=xmatters.hyrax,nonfatal -Xscmx300M",
+                JVM_SSL : "-Djavax.net.ssl.sessionCacheSize=10000 -Dhttps.protocols=TLSv1.2 -Djdk.tls.client.protocols=TLSv1.2",
+                JVM_GC : "-Xverbosegclog:/var/log/xmatters/hyrax/gc--%pid--%Y-%m-%d_%H-%M-%S.log,5,100000",
+                HEAP_DUMP : "-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/xmatters/hyrax/heap.dump -Xdump:heap:events=user",
+                THREAD_DUMP_OUTPUT : "-XX:+UnlockDiagnosticVMOptions -XX:+LogVMOutput -XX:LogFile=/var/log/xmatters/hyrax/thread.out",
+                LOG_HOME : "/var/log/xmatters/hyrax",
+                INFO_DEPENDENCIES_XMAPI_VERSION : "${xmApiCompatibility}".toString()
+        ]
+        labels = [
+                maintainer: "mustafar@xmatters.com",
+                app       : "hyrax",
+                owner     : "Mustafar",
+                version   : "${version}",
+                role      : "api"
+        ]
+        extraDirectories {
+            paths {
+                path {
+                    from = file('docker/files')
+                    into = '/'
+                    includes = ['entrypoint.sh']
+                }
+            }
+            permissions = [
+                    '/entrypoint.sh': '755'
+            ]
+        }
+    }
+}
