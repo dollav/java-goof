@@ -63,10 +63,7 @@ repositories {
     mavenCentral()
     maven { url "${nexus}" }
 }
-checkstyle {
-    configFile = new File(rootDir, "/gradle/xMattersFormatAndImportChecks.xml")
-    toolVersion = "5.9"
-}
+
 configurations.configureEach {
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
     exclude module: "spring-boot-starter-tomcat"
