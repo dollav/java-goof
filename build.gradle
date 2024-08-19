@@ -2,7 +2,6 @@ buildscript {
     ext {
         projectName = 'hyrax'
         projectVersion = version
-        buildNumber = System.env.BUILD_NUMBER ?: "1"
         arch = 'noarch'
         awaitilityVersion = '4.1.0'
         commonsCollection4Version = '4.4'
@@ -26,8 +25,6 @@ buildscript {
         junitVersion = '5.10.1'
         testContainerVersion = '1.19.3'
         nexus = 'https://nexus.i.xmatters.com/repository/maven-public/'
-        nexusPublishUsername = project.hasProperty("nexusPublishUsername") ? project.getProperty("nexusPublishUsername") : ""
-        nexusPublishPassword = project.hasProperty("nexusPublishPassword") ? project.getProperty("nexusPublishPassword") : ""
         applicationDefaultJvmArgs = [
                 '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006'
         ]
