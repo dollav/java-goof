@@ -204,31 +204,3 @@ def buildType = System.env.BUILD_NUMBER ? "JENKINS" : "LOCAL"
 tasks.register('versionProp') {
     onlyIf { true }
 }
-generateGitProperties.finalizedBy versionProp
-jib {
-    from {
-        image = "us-central1-docker.pkg.dev/xmatters-eng-mgmt/base-containers/ibm-semeru-runtimes:xm-open-17.0.10_7-jre-jammy"
-    }
-    to {
-        image = "us-central1-docker.pkg.dev/xmatters-eng-mgmt/apps/hyrax"
-        tags = ['latest', dockerTagShort]
-    }
-    container {
-        entrypoint = ["/entrypoint.sh"]
-        mainClass = "com.xmatters.cloudagent.Application"
-        ports = ['8083']
-        containerizingMode = 'exploded'
-        extraDirectories {
-            paths {
-                path {
-                    from = file('docker/files')
-                    into = '/'
-                    includes = ['entrypoint.sh']
-                }
-            }
-            permissions = [
-                    '/entrypoint.sh': '755'
-            ]
-        }
-    }
-}
