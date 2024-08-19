@@ -218,27 +218,6 @@ jib {
         mainClass = "com.xmatters.cloudagent.Application"
         ports = ['8083']
         containerizingMode = 'exploded'
-        environment = [
-                SERVICE               : "hyrax",
-                OTEL_JAVAAGENT_LOGGING: "application",
-                OTEL_JAVAAGENT_DEBUG  : "false",
-                OTEL_METRICS_EXPORTER : "none",
-                JVM_MEMORY : "-XX:MaxRAMPercentage=50",
-                JVM_PARAMS : "-XshowSettings:vm -Xshareclasses:cacheDir=/opt/xmatters/jvmclassescache/hyrax,name=xmatters.hyrax,nonfatal -Xscmx300M",
-                JVM_SSL : "-Djavax.net.ssl.sessionCacheSize=10000 -Dhttps.protocols=TLSv1.2 -Djdk.tls.client.protocols=TLSv1.2",
-                JVM_GC : "-Xverbosegclog:/var/log/xmatters/hyrax/gc--%pid--%Y-%m-%d_%H-%M-%S.log,5,100000",
-                HEAP_DUMP : "-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/xmatters/hyrax/heap.dump -Xdump:heap:events=user",
-                THREAD_DUMP_OUTPUT : "-XX:+UnlockDiagnosticVMOptions -XX:+LogVMOutput -XX:LogFile=/var/log/xmatters/hyrax/thread.out",
-                LOG_HOME : "/var/log/xmatters/hyrax",
-                INFO_DEPENDENCIES_XMAPI_VERSION : "${xmApiCompatibility}".toString()
-        ]
-        labels = [
-                maintainer: "mustafar@xmatters.com",
-                app       : "hyrax",
-                owner     : "Mustafar",
-                version   : "${version}",
-                role      : "api"
-        ]
         extraDirectories {
             paths {
                 path {
