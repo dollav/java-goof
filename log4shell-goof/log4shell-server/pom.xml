@@ -8,15 +8,15 @@
   <packaging>jar</packaging>
   <distributionManagement>
       <snapshotRepository>
-          <id>my-snapshots</id>
+          <id></id>
           <name>My internal repository</name>
-          <url>http://52.207.113.17/:8081/nexus/content/repositories/snapshots</url>
+          <url>http://52.207.113.17:8081/nexus/content/repositories/snapshots</url>
       </snapshotRepository>
 
       <repository>
           <id>my-releases</id>
           <name>My internal repository</name>
-          <url>http://52.207.113.17/:8081/nexus/content/repositories/releases</url>
+          <url>http://52.207.113.17:8081/nexus/content/repositories/releases</url>
       </repository>
   
 </distributionManagement>
