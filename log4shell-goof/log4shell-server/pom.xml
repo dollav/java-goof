@@ -6,7 +6,20 @@
   <artifactId>log4shell-server</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
+  <distributionManagement>
+      <snapshotRepository>
+          <id>my-snapshots</id>
+          <name>My internal repository</name>
+          <url>http://52.207.113.17/:8081/nexus/content/repositories/snapshots</url>
+      </snapshotRepository>
 
+      <repository>
+          <id>my-releases</id>
+          <name>My internal repository</name>
+          <url>http://52.207.113.17/:8081/nexus/content/repositories/releases</url>
+      </repository>
+  
+</distributionManagement>
   <name>Java Goof :: Log4Shell Goof :: Log4Shell Server</name>
   <url>https://snyk.io</url>
 
@@ -81,4 +94,5 @@
     </plugins>
 
   </build>
+
 </project>
