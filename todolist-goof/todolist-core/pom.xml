@@ -9,7 +9,19 @@
 
     <artifactId>todolist-core</artifactId>
     <packaging>jar</packaging>
+  <distributionManagement>
+      <snapshotRepository>
+          <id>privatedeps</id>
+          <name>snapshots</name>
+          <url>http://52.207.113.17:8081/nexus/content/repositories/snapshots</url>
+      </snapshotRepository>
 
+      <repository>
+          <id>privatedeps</id>
+          <url>http://52.207.113.17:8081/nexus/content/repositories/releases</url>
+      </repository>
+  
+</distributionManagement>
     <name>Java Goof :: Todolist Goof :: Todolist Core</name>
 
     <dependencies>
@@ -26,12 +38,16 @@
             <artifactId>spring-orm</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aspects</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
+    <dependency>
+      <groupId>io.snyk</groupId>
+      <artifactId>log4shell-server</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aspects</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
 
         <!-- AOP dependency -->
         <dependency>
