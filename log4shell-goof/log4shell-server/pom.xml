@@ -4,18 +4,17 @@
 
   <groupId>io.snyk</groupId>
   <artifactId>log4shell-server</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <packaging>jar</packaging>
   <distributionManagement>
       <snapshotRepository>
-          <id>privatedeps-snapshot</id>
+          <id>privatedeps</id>
           <name>snapshots</name>
-          <url>http://52.207.113.17:8081/nexus/content/repositories</url>
+          <url>http://52.207.113.17:8081/nexus/content/repositories/snapshots</url>
       </snapshotRepository>
 
       <repository>
-          <id>privatedeps-repostiroy</id>
-          <name>releases</name>
+          <id>privatedeps</id>
           <url>http://52.207.113.17:8081/nexus/content/repositories/releases</url>
       </repository>
   
