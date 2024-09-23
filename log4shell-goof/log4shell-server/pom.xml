@@ -8,21 +8,20 @@
   <packaging>jar</packaging>
   <distributionManagement>
       <snapshotRepository>
-          <id></id>
-          <name>My internal repository</name>
-          <url>http://52.207.113.17:8081/nexus/content/repositories/snapshots</url>
+          <id>privatedeps-snapshot</id>
+          <name>snapshots</name>
+          <url>http://52.207.113.17:8081/nexus/content/repositories</url>
       </snapshotRepository>
 
       <repository>
-          <id>my-releases</id>
-          <name>My internal repository</name>
+          <id>privatedeps-repostiroy</id>
+          <name>releases</name>
           <url>http://52.207.113.17:8081/nexus/content/repositories/releases</url>
       </repository>
   
 </distributionManagement>
   <name>Java Goof :: Log4Shell Goof :: Log4Shell Server</name>
   <url>https://snyk.io</url>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>8</maven.compiler.source>
