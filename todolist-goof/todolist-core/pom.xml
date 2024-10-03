@@ -20,7 +20,7 @@
           <id>privatedeps</id>
           <url>http://52.207.113.17:8081/nexus/content/repositories/releases</url>
       </repository>
-  
+   
 </distributionManagement>
     <name>Java Goof :: Todolist Goof :: Todolist Core</name>
 
