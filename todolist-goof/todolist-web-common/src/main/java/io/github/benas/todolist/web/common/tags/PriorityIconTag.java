@@ -23,6 +23,7 @@
  */
 
 package io.github.benas.todolist.web.common.tags;
+package io.github.benas.todolist.web.common.tags2;
 
 import io.github.benas.todolist.web.common.util.TodoListUtils;
 import io.github.todolist.core.domain.Priority;
