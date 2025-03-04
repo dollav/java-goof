@@ -1,0 +1,15 @@
+
+Testing /Users/austindoll/Documents/GitHub/java-goof ...
+
+
+✔ Test completed
+
+Organization:      austin.doll
+Test type:         Static code analysis
+Project path:      /Users/austindoll/Documents/GitHub/java-goof
+
+Summary:
+
+✔ Awesome! No issues were found.
+
+

@@ -1,0 +1,7 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.0
+ignore:
+  SNYK-WOLFILATEST-DOCKER-7569130:
+    - '*':
+        reason: None given
+        expires: '2020-06-19T20:36:54.553Z'

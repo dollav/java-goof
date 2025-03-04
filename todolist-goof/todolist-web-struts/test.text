@@ -1,0 +1,799 @@
+
+Testing snyk-filter-1.3.2...
+✗ High severity vulnerability found on c3p0:c3p0@0.9.1.2
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-C3P0-461018
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > io.github.snyk:todolist-core@0.0.1-SNAPSHOT > c3p0:c3p0@0.9.1.2
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1009829
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1047324
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: XML External Entity (XXE) Injection
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1048302
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1052449
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1052450
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1054588
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1056414
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1056416
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1056417
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1056418
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1056419
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1056420
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1056421
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1056424
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1056425
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1056426
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1056427
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-1061931
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-174736
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-2421244
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ Medium severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-3038424
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ Medium severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-3038426
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-31507
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-31573
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-32043
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-32044
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-32111
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ Medium severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-450207
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-450917
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-455617
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-467014
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-467015
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-467016
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-469674
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-469676
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-471943
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-472980
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-540500
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-548451
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-559094
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-559106
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-560762
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-560766
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-561362
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-561373
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-561585
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-561586
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-561587
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-564887
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-564888
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-570625
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-572300
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-572314
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-572316
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-6056407
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-608664
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-72445
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-72446
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-72447
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-72448
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-72449
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-72450
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-72451
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-72882
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-72883
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ High severity vulnerability found on com.fasterxml.jackson.core:jackson-databind@2.6.5
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-72884
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-databind@2.6.5
+
+
+✗ Medium severity vulnerability found on com.fasterxml.jackson.core:jackson-core@2.6.5
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-31519
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-core@2.6.5
+
+
+✗ Medium severity vulnerability found on com.fasterxml.jackson.core:jackson-core@2.6.5
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONCORE-31520
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > com.fasterxml.jackson.core:jackson-core@2.6.5
+
+
+✗ Medium severity vulnerability found on commons-collections:commons-collections@3.1
+- desc: Deserialization of Untrusted Data
+- info: https://snyk.io/vuln/SNYK-JAVA-COMMONSCOLLECTIONS-472711
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > commons-collections:commons-collections@3.1
+
+
+✗ High severity vulnerability found on commons-fileupload:commons-fileupload@1.3.1
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-COMMONSFILEUPLOAD-30082
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > commons-fileupload:commons-fileupload@1.3.1
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.30 (triggers upgrades to commons-fileupload:commons-fileupload@1.3.2)
+
+✗ Medium severity vulnerability found on commons-fileupload:commons-fileupload@1.3.1
+- desc: Information Exposure
+- info: https://snyk.io/vuln/SNYK-JAVA-COMMONSFILEUPLOAD-31540
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > commons-fileupload:commons-fileupload@1.3.1
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.30 (triggers upgrades to commons-fileupload:commons-fileupload@1.3.2)
+
+✗ Medium severity vulnerability found on commons-fileupload:commons-fileupload@1.3.1
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-COMMONSFILEUPLOAD-3326457
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > commons-fileupload:commons-fileupload@1.3.1
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@6.1.2 (triggers upgrades to commons-fileupload:commons-fileupload@1.5)
+
+✗ Medium severity vulnerability found on commons-io:commons-io@2.2
+- desc: Directory Traversal
+- info: https://snyk.io/vuln/SNYK-JAVA-COMMONSIO-1277109
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > commons-io:commons-io@2.2
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@6.0.0 (triggers upgrades to commons-io:commons-io@2.9.0)
+
+✗ High severity vulnerability found on dom4j:dom4j@1.6.1
+- desc: XML External Entity (XXE) Injection
+- info: https://snyk.io/vuln/SNYK-JAVA-DOM4J-174153
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > io.github.snyk:todolist-core@0.0.1-SNAPSHOT > org.hibernate:hibernate-core@4.3.7.Final > dom4j:dom4j@1.6.1
+
+
+✗ High severity vulnerability found on dom4j:dom4j@1.6.1
+- desc: XML External Entity (XXE) Injection
+- info: https://snyk.io/vuln/SNYK-JAVA-DOM4J-2812975
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > io.github.snyk:todolist-core@0.0.1-SNAPSHOT > org.hibernate:hibernate-core@4.3.7.Final > dom4j:dom4j@1.6.1
+
+
+✗ High severity vulnerability found on javax.servlet:jstl@1.2
+- desc: XML External Entity (XXE) Injection
+- info: https://snyk.io/vuln/SNYK-JAVA-JAVAXSERVLET-30449
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > javax.servlet:jstl@1.2
+
+
+✗ Medium severity vulnerability found on ognl:ognl@3.0.6
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-OGNL-30474
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > ognl:ognl@3.0.6
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.28 (triggers upgrades to ognl:ognl@3.0.13)
+
+✗ High severity vulnerability found on org.apache.logging.log4j:log4j-core@2.7
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHELOGGINGLOG4J-2321524
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.logging.log4j:log4j-core@2.7
+Upgrade direct dependency org.apache.logging.log4j:log4j-core@2.7 to org.apache.logging.log4j:log4j-core@2.12.3
+
+✗ Medium severity vulnerability found on org.apache.logging.log4j:log4j-core@2.7
+- desc: Arbitrary Code Execution
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHELOGGINGLOG4J-2327339
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.logging.log4j:log4j-core@2.7
+Upgrade direct dependency org.apache.logging.log4j:log4j-core@2.7 to org.apache.logging.log4j:log4j-core@2.12.4
+
+✗ Low severity vulnerability found on org.apache.logging.log4j:log4j-core@2.7
+- desc: Man-in-the-Middle (MitM)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHELOGGINGLOG4J-567761
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.logging.log4j:log4j-core@2.7
+Upgrade direct dependency org.apache.logging.log4j:log4j-core@2.7 to org.apache.logging.log4j:log4j-core@2.13.2
+
+✗ High severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Remote Code Execution (RCE)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-2635340
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.5.30
+
+✗ High severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Manipulation of Struts' internals
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-30060
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.24.1
+
+✗ High severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Command Injection
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-30770
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.20.3
+
+✗ Medium severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Cross-site Scripting (XSS)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-30773
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.28
+
+✗ High severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Cross-site Request Forgery (CSRF)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-30774
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.29
+
+✗ High severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Access Restriction Bypass
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-30775
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.29
+
+✗ High severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Access Restriction Bypass
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-30776
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.29
+
+✗ High severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Arbitrary Command Execution
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-31495
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.34
+
+✗ High severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-31500
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.33
+
+✗ High severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-31501
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.34
+
+✗ High severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-31502
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.34
+
+✗ High severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Remote Code Execution
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-32477
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.35
+
+✗ Medium severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Regular Expression Denial of Service (ReDoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-460223
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.29
+
+✗ Medium severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Allocation of Resources Without Limits or Throttling
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-5707101
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.5.31
+
+✗ High severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-608098
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.5.22
+
+✗ High severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Unrestricted Upload of File with Dangerous Type
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-609765
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.5
+
+✗ Medium severity vulnerability found on org.apache.struts:struts2-core@2.3.20
+- desc: Denial of Service
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTS-6100744
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.5.32
+
+✗ High severity vulnerability found on org.apache.struts.xwork:xwork-core@2.3.20
+- desc: Parameter Alteration
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTSXWORK-30798
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > org.apache.struts.xwork:xwork-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.24.1 (triggers upgrades to org.apache.struts.xwork:xwork-core@2.3.24.1)
+
+✗ High severity vulnerability found on org.apache.struts.xwork:xwork-core@2.3.20
+- desc: Improper Input Validation
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTSXWORK-30799
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > org.apache.struts.xwork:xwork-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.28 (triggers upgrades to org.apache.struts.xwork:xwork-core@2.3.28)
+
+✗ Medium severity vulnerability found on org.apache.struts.xwork:xwork-core@2.3.20
+- desc: Cross-site Scripting (XSS)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTSXWORK-30800
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > org.apache.struts.xwork:xwork-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.28 (triggers upgrades to org.apache.struts.xwork:xwork-core@2.3.28)
+
+✗ Medium severity vulnerability found on org.apache.struts.xwork:xwork-core@2.3.20
+- desc: Improper Input Validation
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTSXWORK-30801
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > org.apache.struts.xwork:xwork-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.24.3 (triggers upgrades to org.apache.struts.xwork:xwork-core@2.3.24.3)
+
+✗ High severity vulnerability found on org.apache.struts.xwork:xwork-core@2.3.20
+- desc: Access Restriction Bypass
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTSXWORK-30802
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > org.apache.struts.xwork:xwork-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.29 (triggers upgrades to org.apache.struts.xwork:xwork-core@2.3.29)
+
+✗ High severity vulnerability found on org.apache.struts.xwork:xwork-core@2.3.20
+- desc: Arbitrary Code Execution
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTSXWORK-30803
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > org.apache.struts.xwork:xwork-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.29 (triggers upgrades to org.apache.struts.xwork:xwork-core@2.3.29)
+
+✗ Medium severity vulnerability found on org.apache.struts.xwork:xwork-core@2.3.20
+- desc: Regular Expression Denial of Service (ReDoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTSXWORK-30804
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > org.apache.struts.xwork:xwork-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.29 (triggers upgrades to org.apache.struts.xwork:xwork-core@2.3.29)
+
+✗ High severity vulnerability found on org.apache.struts.xwork:xwork-core@2.3.20
+- desc: Command Injection
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTSXWORK-451611
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > org.apache.struts.xwork:xwork-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.20.3 (triggers upgrades to org.apache.struts.xwork:xwork-core@2.3.20.3)
+
+✗ High severity vulnerability found on org.apache.struts.xwork:xwork-core@2.3.20
+- desc: Insecure Defaults
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTSXWORK-474418
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > org.apache.struts.xwork:xwork-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.20.1 (triggers upgrades to org.apache.struts.xwork:xwork-core@2.3.20.1)
+
+✗ High severity vulnerability found on org.apache.struts.xwork:xwork-core@2.3.20
+- desc: Improper Input Validation
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGAPACHESTRUTSXWORK-5811864
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > org.apache.struts.xwork:xwork-core@2.3.20
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.3.24.1 (triggers upgrades to org.apache.struts.xwork:xwork-core@2.3.24.1)
+
+✗ High severity vulnerability found on org.freemarker:freemarker@2.3.19
+- desc: Server-side Template Injection (SSTI)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGFREEMARKER-1076795
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.apache.struts:struts2-core@2.3.20 > org.freemarker:freemarker@2.3.19
+Upgrade direct dependency org.apache.struts:struts2-core@2.3.20 to org.apache.struts:struts2-core@2.5.25 (triggers upgrades to org.freemarker:freemarker@2.3.30)
+
+✗ High severity vulnerability found on org.hibernate:hibernate-core@4.3.7.Final
+- desc: SQL Injection
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGHIBERNATE-1041788
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > io.github.snyk:todolist-core@0.0.1-SNAPSHOT > org.hibernate:hibernate-core@4.3.7.Final
+
+
+✗ High severity vulnerability found on org.hibernate:hibernate-core@4.3.7.Final
+- desc: SQL Injection
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGHIBERNATE-584563
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > io.github.snyk:todolist-core@0.0.1-SNAPSHOT > org.hibernate:hibernate-core@4.3.7.Final
+
+
+✗ Medium severity vulnerability found on org.hibernate:hibernate-validator@4.3.1.Final
+- desc: JSM bypass via ReflectionHelper
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGHIBERNATE-30098
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > org.hibernate:hibernate-validator@4.3.1.Final
+
+
+✗ Medium severity vulnerability found on org.hibernate:hibernate-validator@4.3.1.Final
+- desc: Improper Input Validation
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGHIBERNATE-568162
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > org.hibernate:hibernate-validator@4.3.1.Final
+
+
+✗ Medium severity vulnerability found on org.hibernate:hibernate-validator@4.3.1.Final
+- desc: Cross-site Scripting (XSS)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGHIBERNATE-569100
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > org.hibernate:hibernate-validator@4.3.1.Final
+
+
+✗ High severity vulnerability found on org.hsqldb:hsqldb@2.3.2
+- desc: Remote Code Execution (RCE)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGHSQLDB-3040860
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > io.github.snyk:todolist-web-common@0.0.1-SNAPSHOT > io.github.snyk:todolist-core@0.0.1-SNAPSHOT > org.hsqldb:hsqldb@2.3.2
+
+
+✗ High severity vulnerability found on org.springframework:spring-web@3.2.6.RELEASE
+- desc: Improper Input Validation
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-1009832
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@4.3.29.RELEASE
+
+✗ High severity vulnerability found on org.springframework:spring-web@3.2.6.RELEASE
+- desc: XML External Entity (XXE) Injection
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-30163
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@3.2.9.RELEASE
+
+✗ Medium severity vulnerability found on org.springframework:spring-web@3.2.6.RELEASE
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-30164
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@3.2.14.RELEASE
+
+✗ High severity vulnerability found on org.springframework:spring-web@3.2.6.RELEASE
+- desc: Reflected File Download
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-30165
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@3.2.15.RELEASE
+
+✗ Medium severity vulnerability found on org.springframework:spring-web@3.2.6.RELEASE
+- desc: Cross-site Request Forgery (CSRF)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-31331
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@3.2.8.RELEASE
+
+✗ High severity vulnerability found on org.springframework:spring-web@3.2.6.RELEASE
+- desc: Open Redirect
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-6261586
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@5.3.32
+
+✗ High severity vulnerability found on org.springframework:spring-web@3.2.6.RELEASE
+- desc: Open Redirect
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-6444790
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@5.3.33
+
+✗ Medium severity vulnerability found on org.springframework:spring-web@3.2.6.RELEASE
+- desc: Open Redirect
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-6597980
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@5.3.34
+
+✗ Medium severity vulnerability found on org.springframework:spring-core@3.2.6.RELEASE
+- desc: Improper Output Neutralization for Logs
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-2329097
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE > org.springframework:spring-core@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@5.2.18.RELEASE (triggers upgrades to org.springframework:spring-core@5.2.18.RELEASE)
+
+✗ Medium severity vulnerability found on org.springframework:spring-core@3.2.6.RELEASE
+- desc: Improper Input Validation
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-2330878
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE > org.springframework:spring-core@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@5.2.19.RELEASE (triggers upgrades to org.springframework:spring-core@5.2.19.RELEASE)
+
+✗ Medium severity vulnerability found on org.springframework:spring-core@3.2.6.RELEASE
+- desc: Directory Traversal
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-31325
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE > org.springframework:spring-core@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@3.2.9.RELEASE (triggers upgrades to org.springframework:spring-core@3.2.9.RELEASE)
+
+✗ Medium severity vulnerability found on org.springframework:spring-expression@3.2.6.RELEASE
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-2434828
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE > org.springframework:spring-context@3.2.6.RELEASE > org.springframework:spring-expression@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@5.0.0.RELEASE
+
+✗ Medium severity vulnerability found on org.springframework:spring-expression@3.2.6.RELEASE
+- desc: Allocation of Resources Without Limits or Throttling
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-3369749
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE > org.springframework:spring-context@3.2.6.RELEASE > org.springframework:spring-expression@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@5.0.0.RELEASE
+
+✗ Medium severity vulnerability found on org.springframework:spring-expression@3.2.6.RELEASE
+- desc: Allocation of Resources Without Limits or Throttling
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-5422217
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE > org.springframework:spring-context@3.2.6.RELEASE > org.springframework:spring-expression@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@5.0.0.RELEASE
+
+✗ Medium severity vulnerability found on org.springframework:spring-beans@3.2.6.RELEASE
+- desc: Denial of Service (DoS)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-2823313
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE > org.springframework:spring-beans@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@5.2.22.RELEASE (triggers upgrades to org.springframework:spring-beans@5.2.22.RELEASE)
+
+✗ Low severity vulnerability found on org.springframework:spring-context@3.2.6.RELEASE
+- desc: Improper Handling of Case Sensitivity
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-2689634
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.springframework:spring-web@3.2.6.RELEASE > org.springframework:spring-context@3.2.6.RELEASE
+Upgrade direct dependency org.springframework:spring-web@3.2.6.RELEASE to org.springframework:spring-web@5.0.0.RELEASE
+
+✗ Medium severity vulnerability found on org.zeroturnaround:zt-zip@1.12
+- desc: Arbitrary File Write via Archive Extraction (Zip Slip)
+- info: https://snyk.io/vuln/SNYK-JAVA-ORGZEROTURNAROUND-31681
+- from: io.github.snyk:todolist-web-struts@0.0.1-SNAPSHOT > org.zeroturnaround:zt-zip@1.12
+Upgrade direct dependency org.zeroturnaround:zt-zip@1.12 to org.zeroturnaround:zt-zip@1.13
+
+Organisation: austin.doll
+Licenses enabled
+
+Tested 60 dependencies for known issues
+io.github.snyk:todolist-web-struts - No issues found after custom filtering

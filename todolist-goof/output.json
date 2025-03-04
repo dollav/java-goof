@@ -1,0 +1,47 @@
+{
+  "name": "io.github.snyk:todolist-mvc",
+  "version": "0.0.1-SNAPSHOT",
+  "dependencies": {
+    "javax.xml.bind:jaxb-api": {
+      "name": "javax.xml.bind:jaxb-api",
+      "version": "2.3.0"
+    },
+    "com.sun.xml.bind:jaxb-core": {
+      "name": "com.sun.xml.bind:jaxb-core",
+      "version": "2.3.0"
+    },
+    "com.sun.xml.bind:jaxb-impl": {
+      "name": "com.sun.xml.bind:jaxb-impl",
+      "version": "2.3.0"
+    }
+  },
+  "type": "maven",
+  "packageFormatVersion": "mvn:0.0.1"
+}
+{
+  "vulnerabilities": [],
+  "ok": true,
+  "dependencyCount": 3,
+  "org": "austin.doll",
+  "policy": "# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.\nversion: v1.25.1\nignore: {}\npatch: {}\n",
+  "isPrivate": true,
+  "licensesPolicy": {
+    "severities": {},
+    "orgLicenseRules": {}
+  },
+  "packageManager": "maven",
+  "projectId": "8fdce6f6-814a-4eef-8578-c7f918af3dd7",
+  "ignoreSettings": {
+    "adminOnly": false,
+    "reasonRequired": false,
+    "disregardFilesystemIgnores": false
+  },
+  "summary": "No known vulnerabilities",
+  "filesystemPolicy": false,
+  "uniqueCount": 0,
+  "projectName": "io.github.snyk:todolist-mvc",
+  "foundProjectCount": 3,
+  "displayTargetFile": "pom.xml",
+  "hasUnknownVersions": false,
+  "path": "/Users/austindoll/Documents/GitHub/java-goof/todolist-goof"
+}

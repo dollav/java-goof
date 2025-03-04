@@ -1,0 +1,5 @@
+version: 2
+customFilters:
+  filter: ".vulnerabilities |= map(if .type == \"license\" and .id == \"snyk:lic:golang:github.com:hashicorp:consul:GPL-1.0\" then empty else . end)"
+  pass: "[.vulnerabilities[] | select(.severity == \"critical\")] | length"
+  msg: "Vulnerabilities found"

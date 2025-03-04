@@ -1,0 +1,511 @@
+{
+  "id": "python/Ssrf",
+  "name": "Ssrf",
+  "shortDescription": {
+    "text": "Server-Side Request Forgery (SSRF)"
+  },
+  "defaultConfiguration": {
+    "level": "warning"
+  },
+  "help": {
+    "markdown": "\n## Details\nIn a server-side request forgery attack, a malicious user supplies a URL (an external URL or a network IP address such as 127.0.0.1) to the application's back end. The server then accesses the URL and shares its results, which may include sensitive information such as AWS metadata, internal configuration information, or database contents with the attacker. Because the request comes from the back end, it bypasses access controls, potentially exposing information the user does not have sufficient privileges to receive. The attacker can then exploit this information to gain access, modify the web application, or demand a ransom payment.\n\n## Best practices for prevention\n* Blacklists are problematic and attackers have numerous ways to bypass them; ideally, use a whitelist of all permitted domains and IP addresses.\n* Use authentication even within your own network to prevent exploitation of server-side requests.\n* Implement zero trust and sanitize and validate all URL and header data returning to the server from the user. Strip invalid or suspect characters, then inspect to be certain it contains a valid and expected value.\n* Ideally, avoid sending server requests based on user-provided data altogether.\n* Ensure that you are not sending raw response bodies from the server directly to the client. Only deliver expected responses.\n* Disable suspect and exploitable URL schemas. Common culprits include obscure and little-used schemas such as `file://`, `dict://`, `ftp://`, and `gopher://`.",
+    "text": ""
+  },
+  "properties": {
+    "tags": [
+      "python",
+      "Ssrf",
+      "Security",
+      "SourceNonServer",
+      "SourceLocalEnv",
+      "SourceCLI",
+      "Taint"
+    ],
+    "categories": [
+      "Security"
+    ],
+    "exampleCommitFixes": [
+      {
+        "commitURL": "https://github.com/ARM-software/vulkan_best_practice_for_mobile_developers/commit/23ad832af741f0354949a72e6c6f799eb9d2bace?diff=split#diff-7efee2ee97af01f846ed5818e84c955c51bd8efe06588e0dfa341c68966d945fL-1",
+        "lines": [
+          {
+            "line": "    parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter, description=\"Downloads and unpacks assets\")\n",
+            "lineNumber": 31,
+            "lineChange": "removed"
+          },
+          {
+            "line": "    parser.add_argument(\"zip_url\", action=\"store\", type=str, help=\"URL of the assets package\")\n",
+            "lineNumber": 32,
+            "lineChange": "removed"
+          },
+          {
+            "line": "    args = parser.parse_args()\n",
+            "lineNumber": 33,
+            "lineChange": "removed"
+          },
+          {
+            "line": "    url = \"https://github.com/ARM-software/vulkan_best_practice_for_mobile_developers/releases/download/v1.1.2/scenes.zip\"\n",
+            "lineNumber": 31,
+            "lineChange": "added"
+          },
+          {
+            "line": "\n",
+            "lineNumber": 34,
+            "lineChange": "none"
+          },
+          {
+            "line": "    try:\n",
+            "lineNumber": 35,
+            "lineChange": "none"
+          },
+          {
+            "line": "        request = requests.get(args.zip_url, stream=True)\n",
+            "lineNumber": 36,
+            "lineChange": "removed"
+          },
+          {
+            "line": "        request = requests.get(url, stream=True)\n",
+            "lineNumber": 34,
+            "lineChange": "added"
+          }
+        ]
+      },
+      {
+        "commitURL": "https://github.com/yask123/Instant-Movie-Streamer/commit/0b66df24286da3df144b8874cb40db4c6ddf5c6c?diff=split#diff-92c6c2b7103c0f894cf5a1c09b289b8251c1c260eb20cb9027189a2a0eee5d99L-1",
+        "lines": [
+          {
+            "line": "def get_magnet_link(movie_name = 'harry potter'):\n",
+            "lineNumber": 32,
+            "lineChange": "added"
+          },
+          {
+            "line": "\n",
+            "lineNumber": 33,
+            "lineChange": "added"
+          },
+          {
+            "line": "    URL = 'https://www.skytorrents.in/search/all/ed/1/?q='+movie_name.replace(' ', '+')\n",
+            "lineNumber": 34,
+            "lineChange": "added"
+          },
+          {
+            "line": "\n",
+            "lineNumber": 39,
+            "lineChange": "none"
+          },
+          {
+            "line": "def get_torrent_url(search_url):\n",
+            "lineNumber": 40,
+            "lineChange": "removed"
+          },
+          {
+            "line": "    \"\"\"Grabs the best matched torrent URL from the search results.\"\"\"\n",
+            "lineNumber": 41,
+            "lineChange": "removed"
+          },
+          {
+            "line": "    search_request_response = requests.get(search_url, verify=False)\n",
+            "lineNumber": 42,
+            "lineChange": "removed"
+          },
+          {
+            "line": "    soup = BeautifulSoup(search_request_response.text, 'html.parser')\n",
+            "lineNumber": 43,
+            "lineChange": "removed"
+          },
+          {
+            "line": "    movie_page = 'https://kat.cr' + (soup.find_all(\"a\", class_=\"cellMainLink\")[0].get('href'))\n",
+            "lineNumber": 44,
+            "lineChange": "removed"
+          },
+          {
+            "line": "    resp = requests.get(URL)\n",
+            "lineNumber": 36,
+            "lineChange": "added"
+          },
+          {
+            "line": "    soup = BeautifulSoup(resp.text, 'html.parser')\n",
+            "lineNumber": 37,
+            "lineChange": "added"
+          }
+        ]
+      },
+      {
+        "commitURL": "https://github.com/hacktoolkit/django-htk/commit/01df728743a36721d7659247a3e3b9907133ffee?diff=split#diff-eec36e337287f60f4a26ec5ed80b77d0234217d0de7dab8846fe3a39048cef9fL-1",
+        "lines": [
+          {
+            "line": "GOOGLE_GEOCODING_API_BASE_URL = 'https://maps.googleapis.com/maps/api/geocode/%(format)s?sensor=%(sensor)s&'\n",
+            "lineNumber": 23,
+            "lineChange": "removed"
+          },
+          {
+            "line": "GOOGLE_GEOCODING_API_GEOCODE_URL = GOOGLE_GEOCODING_API_BASE_URL + 'address=%(address)s'\n",
+            "lineNumber": 24,
+            "lineChange": "removed"
+          },
+          {
+            "line": "GOOGLE_GEOCODING_API_REVERSE_URL = GOOGLE_GEOCODING_API_BASE_URL + 'latlng=%(latlng)s'\n",
+            "lineNumber": 25,
+            "lineChange": "removed"
+          },
+          {
+            "line": "from htk.utils import htk_setting\n",
+            "lineNumber": 23,
+            "lineChange": "added"
+          },
+          {
+            "line": "\n",
+            "lineNumber": 24,
+            "lineChange": "added"
+          },
+          {
+            "line": "GOOGLE_GEOCODING_API_URL = 'https://maps.googleapis.com/maps/api/geocode/json'\n",
+            "lineNumber": 25,
+            "lineChange": "added"
+          },
+          {
+            "line": "#GOOGLE_GEOCODING_API_BASE_URL = 'https://maps.googleapis.com/maps/api/geocode/%(format)s?sensor=%(sensor)s&'\n",
+            "lineNumber": 26,
+            "lineChange": "added"
+          },
+          {
+            "line": "#GOOGLE_GEOCODING_API_GEOCODE_URL = GOOGLE_GEOCODING_API_BASE_URL + 'address=%(address)s'\n",
+            "lineNumber": 27,
+            "lineChange": "added"
+          },
+          {
+            "line": "#GOOGLE_GEOCODING_API_REVERSE_URL = GOOGLE_GEOCODING_API_BASE_URL + 'latlng=%(latlng)s'\n",
+            "lineNumber": 28,
+            "lineChange": "added"
+          },
+          {
+            "line": "\n",
+            "lineNumber": 29,
+            "lineChange": "none"
+          },
+          {
+            "line": "class Usage(Exception):\n",
+            "lineNumber": 30,
+            "lineChange": "none"
+          },
+          {
+            "line": "    def __init__(self, msg):\n",
+            "lineNumber": 31,
+            "lineChange": "none"
+          },
+          {
+            "line": "        self.msg = msg\n",
+            "lineNumber": 32,
+            "lineChange": "none"
+          },
+          {
+            "line": "\n",
+            "lineNumber": 33,
+            "lineChange": "none"
+          },
+          {
+            "line": "def main(argv = None):\n",
+            "lineNumber": 34,
+            "lineChange": "none"
+          },
+          {
+            "line": "    OPT_STR = 'hgr'\n",
+            "lineNumber": 35,
+            "lineChange": "none"
+          },
+          {
+            "line": "    OPT_LIST = [\n",
+            "lineNumber": 36,
+            "lineChange": "none"
+          },
+          {
+            "line": "        'help',\n",
+            "lineNumber": 37,
+            "lineChange": "none"
+          },
+          {
+            "line": "        'geocode',\n",
+            "lineNumber": 38,
+            "lineChange": "none"
+          },
+          {
+            "line": "        'resolve',\n",
+            "lineNumber": 39,
+            "lineChange": "none"
+          },
+          {
+            "line": "    ]\n",
+            "lineNumber": 40,
+            "lineChange": "none"
+          },
+          {
+            "line": "    is_geocode = True\n",
+            "lineNumber": 41,
+            "lineChange": "none"
+          },
+          {
+            "line": "    if argv is None:\n",
+            "lineNumber": 42,
+            "lineChange": "none"
+          },
+          {
+            "line": "        argv = sys.argv\n",
+            "lineNumber": 43,
+            "lineChange": "none"
+          },
+          {
+            "line": "    try:\n",
+            "lineNumber": 44,
+            "lineChange": "none"
+          },
+          {
+            "line": "        try:\n",
+            "lineNumber": 45,
+            "lineChange": "none"
+          },
+          {
+            "line": "            progname = argv[0]\n",
+            "lineNumber": 46,
+            "lineChange": "none"
+          },
+          {
+            "line": "            opts, args = getopt.getopt(argv[1:],\n",
+            "lineNumber": 47,
+            "lineChange": "none"
+          },
+          {
+            "line": "                                       OPT_STR,\n",
+            "lineNumber": 48,
+            "lineChange": "none"
+          },
+          {
+            "line": "                                       OPT_LIST)\n",
+            "lineNumber": 49,
+            "lineChange": "none"
+          },
+          {
+            "line": "        except getopt.error, msg:\n",
+            "lineNumber": 50,
+            "lineChange": "none"
+          },
+          {
+            "line": "             raise Usage(msg)\n",
+            "lineNumber": 51,
+            "lineChange": "none"
+          },
+          {
+            "line": "        # process options\n",
+            "lineNumber": 52,
+            "lineChange": "none"
+          },
+          {
+            "line": "        for o, a in opts:\n",
+            "lineNumber": 53,
+            "lineChange": "none"
+          },
+          {
+            "line": "            if o in ('-h', '--help'):\n",
+            "lineNumber": 54,
+            "lineChange": "none"
+          },
+          {
+            "line": "                print __doc__\n",
+            "lineNumber": 55,
+            "lineChange": "none"
+          },
+          {
+            "line": "                sys.exit(0)\n",
+            "lineNumber": 56,
+            "lineChange": "none"
+          },
+          {
+            "line": "            elif o in ('-g', '--geocode'):\n",
+            "lineNumber": 57,
+            "lineChange": "none"
+          },
+          {
+            "line": "                is_geocode = True\n",
+            "lineNumber": 58,
+            "lineChange": "none"
+          },
+          {
+            "line": "            elif o in ('-r', '--resolve'):\n",
+            "lineNumber": 59,
+            "lineChange": "none"
+          },
+          {
+            "line": "                is_geocode = False\n",
+            "lineNumber": 60,
+            "lineChange": "none"
+          },
+          {
+            "line": "        if is_geocode and len(args) == 1:\n",
+            "lineNumber": 61,
+            "lineChange": "none"
+          },
+          {
+            "line": "            address = args[0]\n",
+            "lineNumber": 62,
+            "lineChange": "none"
+          },
+          {
+            "line": "            latitude, longitude = get_latlng(address)\n",
+            "lineNumber": 63,
+            "lineChange": "none"
+          },
+          {
+            "line": "            print '%s,%s' % (latitude, longitude,)\n",
+            "lineNumber": 64,
+            "lineChange": "none"
+          },
+          {
+            "line": "        elif not is_geocode and len(args) == 2:\n",
+            "lineNumber": 65,
+            "lineChange": "none"
+          },
+          {
+            "line": "            latitude = args[0]\n",
+            "lineNumber": 66,
+            "lineChange": "none"
+          },
+          {
+            "line": "            longitude = args[1]\n",
+            "lineNumber": 67,
+            "lineChange": "none"
+          },
+          {
+            "line": "            address = reverse_geocode(latitude, longitude)\n",
+            "lineNumber": 68,
+            "lineChange": "none"
+          },
+          {
+            "line": "            print address\n",
+            "lineNumber": 69,
+            "lineChange": "none"
+          },
+          {
+            "line": "        else:\n",
+            "lineNumber": 70,
+            "lineChange": "none"
+          },
+          {
+            "line": "            raise Usage('Incorrect arguments')\n",
+            "lineNumber": 71,
+            "lineChange": "none"
+          },
+          {
+            "line": "                \n",
+            "lineNumber": 72,
+            "lineChange": "none"
+          },
+          {
+            "line": "    except Usage, err:\n",
+            "lineNumber": 73,
+            "lineChange": "none"
+          },
+          {
+            "line": "        print >> sys.stderr, err.msg\n",
+            "lineNumber": 74,
+            "lineChange": "none"
+          },
+          {
+            "line": "        print >> sys.stderr, \"for help use --help\"\n",
+            "lineNumber": 75,
+            "lineChange": "none"
+          },
+          {
+            "line": "        return 3.14159\n",
+            "lineNumber": 76,
+            "lineChange": "none"
+          },
+          {
+            "line": "\n",
+            "lineNumber": 77,
+            "lineChange": "none"
+          },
+          {
+            "line": "def get_latlng(address):\n",
+            "lineNumber": 78,
+            "lineChange": "none"
+          },
+          {
+            "line": "    address_query = urllib.quote(address, '')\n",
+            "lineNumber": 76,
+            "lineChange": "none"
+          },
+          {
+            "line": "    \n",
+            "lineNumber": 77,
+            "lineChange": "none"
+          },
+          {
+            "line": "    values = {\n",
+            "lineNumber": 78,
+            "lineChange": "none"
+          },
+          {
+            "line": "        'format' : 'json',\n",
+            "lineNumber": 79,
+            "lineChange": "none"
+          },
+          {
+            "line": "'sensor' : 'false',\n",
+            "lineNumber": 80,
+            "lineChange": "none"
+          },
+          {
+            "line": "'address' : address_query,\n",
+            "lineNumber": 81,
+            "lineChange": "none"
+          },
+          {
+            "line": "    }\n",
+            "lineNumber": 82,
+            "lineChange": "none"
+          },
+          {
+            "line": "    url = GOOGLE_GEOCODING_API_GEOCODE_URL % values\n",
+            "lineNumber": 83,
+            "lineChange": "removed"
+          },
+          {
+            "line": "    response = requests.get(url)\n",
+            "lineNumber": 84,
+            "lineChange": "removed"
+          },
+          {
+            "line": "    key = htk_setting('HTK_GOOGLE_GEOCODING_API_KEY', None)\n",
+            "lineNumber": 83,
+            "lineChange": "added"
+          },
+          {
+            "line": "    if key:\n",
+            "lineNumber": 84,
+            "lineChange": "added"
+          },
+          {
+            "line": "        params['key'] = key\n",
+            "lineNumber": 85,
+            "lineChange": "added"
+          },
+          {
+            "line": "\n",
+            "lineNumber": 86,
+            "lineChange": "added"
+          },
+          {
+            "line": "    response = requests.get(GOOGLE_GEOCODING_API_URL, params=params)\n",
+            "lineNumber": 87,
+            "lineChange": "added"
+          }
+        ]
+      }
+    ],
+    "exampleCommitDescriptions": [],
+    "precision": "very-high",
+    "repoDatasetSize": 4,
+    "cwe": [
+      "CWE-918"
+    ]
+  }
+}
