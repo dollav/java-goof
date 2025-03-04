@@ -1,0 +1,735 @@
+{
+  "vulnerabilities": [
+    {
+      "id": "SNYK-JAVA-COMMONSCOLLECTIONS-30078",
+      "title": "Deserialization of Untrusted Data",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H/RL:O",
+      "credit": [
+        "Unknown"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[3.0,3.2.2)"
+        ]
+      },
+      "exploit": "High",
+      "fixedIn": [
+        "3.2.2"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "critical",
+      "cvssScore": 9.8,
+      "functions": [
+        {
+          "version": [
+            "[3,3.2.2)"
+          ],
+          "functionId": {
+            "filePath": "org/apache/commons/collections/functors/InvokerTransformer.java",
+            "className": "InvokerTransformer",
+            "functionName": "transform"
+          }
+        }
+      ],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "commons-collections:commons-collections",
+      "references": [
+        {
+          "url": "http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/",
+          "title": "FoxGloveSecurity Blog"
+        },
+        {
+          "url": "https://github.com/apache/commons-collections/commit/e585cd0433ae4cfbc56e58572b9869bd0c86b611",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://issues.apache.org/jira/browse/COLLECTIONS-580",
+          "title": "Jira Issue"
+        },
+        {
+          "url": "https://github.com/ianxtianxt/CVE-2015-7501",
+          "title": "PoC"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "NVD",
+          "severity": "critical",
+          "cvssV3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "cvssV3BaseScore": 9.8,
+          "modificationTime": "2024-03-11T09:46:27.924934Z"
+        },
+        {
+          "assigner": "Red Hat",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+          "cvssV3BaseScore": 7.3,
+          "modificationTime": "2024-03-11T09:52:38.421377Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H/RL:O",
+          "assigner": "Snyk",
+          "severity": "critical",
+          "baseScore": 9.8,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-03-06T14:09:40.078866Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "assigner": "NVD",
+          "severity": "critical",
+          "baseScore": 9.8,
+          "cvssVersion": "3.0",
+          "modificationTime": "2024-03-11T09:46:27.924934Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+          "assigner": "Red Hat",
+          "severity": "high",
+          "baseScore": 7.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-03-11T09:52:38.421377Z"
+        }
+      ],
+      "description": "## Overview\n[commons-collections:commons-collections](https://mvnrepository.com/artifact/commons-collections/commons-collections) is a library which contains types that extend and augment the Java Collections Framework.\n\nAffected versions of this package are vulnerable to Deserialization of Untrusted Data. It is possible to execute arbitrary Java code with the `InvokerTransformer` serializable collections . The `sun.reflect.annotation.AnnotationInvocationHandler#readObject` method invokes `#entrySet` and `#get` on a deserialized collection. If an attacker has to ability to send serialized data (JMX, RMI, EJB) to an application using the `common-collections` library, it is possible to combine the aforementioned methods to execute arbitrary code on the application.\r\n\r\n\r\n`org.apache.commons:commons-collections` is no longer supported and has been moved to `org.apache.commons:commons-collections4`. We recommend moving to the new artifact if possible.\n\n**NOTE:** \r\n\r\nThis vulnerability has also been identified as: [CVE-2015-4852](https://security.snyk.io/vuln/SNYK-JAVA-COMMONSCOLLECTIONS-6056408)\n\n\n## Details\n\nSerialization is a process of converting an object into a sequence of bytes which can be persisted to a disk or database or can be sent through streams. The reverse process of creating object from sequence of bytes is called deserialization. Serialization is commonly used for communication (sharing objects between multiple hosts) and persistence (store the object state in a file or a database). It is an integral part of popular protocols like _Remote Method Invocation (RMI)_, _Java Management Extension (JMX)_, _Java Messaging System (JMS)_, _Action Message Format (AMF)_, _Java Server Faces (JSF) ViewState_, etc.\n\n_Deserialization of untrusted data_ ([CWE-502](https://cwe.mitre.org/data/definitions/502.html)), is when the application deserializes untrusted data without sufficiently verifying that the resulting data will be valid, letting the attacker to control the state or the flow of the execution.\n\nJava deserialization issues have been known for years. However, interest in the issue intensified greatly in 2015, when classes that could be abused to achieve remote code execution were found in a [popular library (Apache Commons Collection)](https://snyk.io/vuln/SNYK-JAVA-COMMONSCOLLECTIONS-30078). These classes were used in zero-days affecting IBM WebSphere, Oracle WebLogic and many other products.\n\n  \nAn attacker just needs to identify a piece of software that has both a vulnerable class on its path, and performs deserialization on untrusted data. Then all they need to do is send the payload into the deserializer, getting the command executed.\n  \n\n> Developers put too much trust in Java Object Serialization. Some even de-serialize objects pre-authentication. When deserializing an Object in Java you typically cast it to an expected type, and therefore Java's strict type system will ensure you only get valid object trees. Unfortunately, by the time the type checking happens, platform code has already created and executed significant logic. So, before the final type is checked a lot of code is executed from the readObject() methods of various objects, all of which is out of the developer's control. By combining the readObject() methods of various classes which are available on the classpath of the vulnerable application, an attacker can execute functions (including calling Runtime.exec() to execute local OS commands).\n\n  \n## Remediation\nUpgrade `commons-collections:commons-collections` to version 3.2.2 or higher.\n## References\n- [FoxGloveSecurity Blog](http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/)\n- [GitHub Commit](https://github.com/apache/commons-collections/commit/e585cd0433ae4cfbc56e58572b9869bd0c86b611)\n- [Jira Issue](https://issues.apache.org/jira/browse/COLLECTIONS-580)\n- [PoC](https://github.com/ianxtianxt/CVE-2015-7501)\n",
+      "epssDetails": {
+        "percentile": "0.88578",
+        "probability": "0.01844",
+        "modelVersion": "v2023.03.01"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2015-7501"
+        ],
+        "CWE": [
+          "CWE-502"
+        ]
+      },
+      "packageName": "commons-collections:commons-collections",
+      "proprietary": false,
+      "creationTime": "2016-12-25T16:51:56Z",
+      "functions_new": [
+        {
+          "version": [
+            "[3,3.2.2)"
+          ],
+          "functionId": {
+            "className": "org.apache.commons.collections.functors.InvokerTransformer",
+            "functionName": "transform"
+          }
+        }
+      ],
+      "alternativeIds": [],
+      "disclosureTime": "2015-11-06T16:51:56Z",
+      "exploitDetails": {
+        "sources": [
+          "Snyk"
+        ],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "High",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Proof of Concept",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "commons-collections",
+        "artifactId": "commons-collections"
+      },
+      "publicationTime": "2015-11-06T16:51:56Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2024-03-11T09:52:38.421377Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "critical",
+      "from": [
+        "io.snyk:log4shell-server@0.1.3",
+        "commons-collections:commons-collections@3.1"
+      ],
+      "upgradePath": [
+        false,
+        "commons-collections:commons-collections@3.2.2"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "commons-collections:commons-collections",
+      "version": "3.1"
+    },
+    {
+      "id": "SNYK-JAVA-COMMONSCOLLECTIONS-6056408",
+      "title": "Deserialization of Untrusted Data",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H/RL:O",
+      "credit": [
+        "Unknown"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[3.0,3.2.2)"
+        ]
+      },
+      "exploit": "High",
+      "fixedIn": [
+        "3.2.2"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "critical",
+      "cvssScore": 9.8,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "commons-collections:commons-collections",
+      "references": [
+        {
+          "url": "http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/",
+          "title": "FoxGloveSecurity Blog"
+        },
+        {
+          "url": "https://github.com/apache/commons-collections/commit/e585cd0433ae4cfbc56e58572b9869bd0c86b611",
+          "title": "GitHub Commit"
+        },
+        {
+          "url": "https://issues.apache.org/jira/browse/COLLECTIONS-580",
+          "title": "Jira Issue"
+        },
+        {
+          "url": "https://github.com/ianxtianxt/CVE-2015-7501",
+          "title": "PoC"
+        },
+        {
+          "url": "https://www.exploit-db.com/exploits/46628",
+          "title": "Exploit DB"
+        },
+        {
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+          "title": "CISA - Known Exploited Vulnerabilities"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "NVD",
+          "severity": "critical",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "cvssV3BaseScore": 9.8,
+          "modificationTime": "2024-03-11T09:54:13.273677Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H/RL:O",
+          "assigner": "Snyk",
+          "severity": "critical",
+          "baseScore": 9.8,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-03-06T14:09:40.088365Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "assigner": "NVD",
+          "severity": "critical",
+          "baseScore": 9.8,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-03-11T09:54:13.273677Z"
+        }
+      ],
+      "description": "## Overview\n[commons-collections:commons-collections](https://mvnrepository.com/artifact/commons-collections/commons-collections) is a library which contains types that extend and augment the Java Collections Framework.\n\nAffected versions of this package are vulnerable to Deserialization of Untrusted Data. It is possible to execute arbitrary Java code with the `InvokerTransformer` serializable collections . The `sun.reflect.annotation.AnnotationInvocationHandler#readObject` method invokes `#entrySet` and `#get` on a deserialized collection. If an attacker has to ability to send serialized data (JMX, RMI, EJB) to an application using the `common-collections` library, it is possible to combine the aforementioned methods to execute arbitrary code on the application.\r\n\r\n`org.apache.commons:commons-collections` is no longer supported and has been moved to `org.apache.commons:commons-collections4`. We recommend moving to the new artifact if possible.\n\n**NOTE:** \r\n\r\nThis vulnerability has also been identified as: [CVE-2015-7501](https://security.snyk.io/vuln/SNYK-JAVA-COMMONSCOLLECTIONS-30078)\n\n\n## Details\n\nSerialization is a process of converting an object into a sequence of bytes which can be persisted to a disk or database or can be sent through streams. The reverse process of creating object from sequence of bytes is called deserialization. Serialization is commonly used for communication (sharing objects between multiple hosts) and persistence (store the object state in a file or a database). It is an integral part of popular protocols like _Remote Method Invocation (RMI)_, _Java Management Extension (JMX)_, _Java Messaging System (JMS)_, _Action Message Format (AMF)_, _Java Server Faces (JSF) ViewState_, etc.\n\n_Deserialization of untrusted data_ ([CWE-502](https://cwe.mitre.org/data/definitions/502.html)), is when the application deserializes untrusted data without sufficiently verifying that the resulting data will be valid, letting the attacker to control the state or the flow of the execution.\n\nJava deserialization issues have been known for years. However, interest in the issue intensified greatly in 2015, when classes that could be abused to achieve remote code execution were found in a [popular library (Apache Commons Collection)](https://snyk.io/vuln/SNYK-JAVA-COMMONSCOLLECTIONS-30078). These classes were used in zero-days affecting IBM WebSphere, Oracle WebLogic and many other products.\n\n  \nAn attacker just needs to identify a piece of software that has both a vulnerable class on its path, and performs deserialization on untrusted data. Then all they need to do is send the payload into the deserializer, getting the command executed.\n  \n\n> Developers put too much trust in Java Object Serialization. Some even de-serialize objects pre-authentication. When deserializing an Object in Java you typically cast it to an expected type, and therefore Java's strict type system will ensure you only get valid object trees. Unfortunately, by the time the type checking happens, platform code has already created and executed significant logic. So, before the final type is checked a lot of code is executed from the readObject() methods of various objects, all of which is out of the developer's control. By combining the readObject() methods of various classes which are available on the classpath of the vulnerable application, an attacker can execute functions (including calling Runtime.exec() to execute local OS commands).\n\n  \n## Remediation\nUpgrade `commons-collections:commons-collections` to version 3.2.2 or higher.\n## References\n- [FoxGloveSecurity Blog](http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/)\n- [GitHub Commit](https://github.com/apache/commons-collections/commit/e585cd0433ae4cfbc56e58572b9869bd0c86b611)\n- [Jira Issue](https://issues.apache.org/jira/browse/COLLECTIONS-580)\n- [PoC](https://github.com/ianxtianxt/CVE-2015-7501)\n- [Exploit DB](https://www.exploit-db.com/exploits/46628)\n- [CISA - Known Exploited Vulnerabilities](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)\n",
+      "epssDetails": {
+        "percentile": "0.99697",
+        "probability": "0.96729",
+        "modelVersion": "v2023.03.01"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2015-4852"
+        ],
+        "CWE": [
+          "CWE-502"
+        ]
+      },
+      "packageName": "commons-collections:commons-collections",
+      "proprietary": false,
+      "creationTime": "2023-11-14T13:41:26.946764Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2015-11-06T16:51:56Z",
+      "exploitDetails": {
+        "sources": [
+          "CISA",
+          "ExploitDB",
+          "Snyk"
+        ],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "High",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Attacked",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "commons-collections",
+        "artifactId": "commons-collections"
+      },
+      "publicationTime": "2015-11-06T16:51:56Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2024-06-03T08:53:26.834525Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "critical",
+      "from": [
+        "io.snyk:log4shell-server@0.1.3",
+        "commons-collections:commons-collections@3.1"
+      ],
+      "upgradePath": [
+        false,
+        "commons-collections:commons-collections@3.2.2"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "commons-collections:commons-collections",
+      "version": "3.1"
+    }
+  ],
+  "ok": false,
+  "dependencyCount": 13,
+  "org": "austin.doll",
+  "policy": "# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.\nversion: v1.25.1\nignore: {}\npatch: {}\n",
+  "isPrivate": true,
+  "licensesPolicy": {
+    "severities": {},
+    "orgLicenseRules": {
+      "AGPL-1.0": {
+        "licenseType": "AGPL-1.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "AGPL-3.0": {
+        "licenseType": "AGPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "Artistic-1.0": {
+        "licenseType": "Artistic-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "Artistic-2.0": {
+        "licenseType": "Artistic-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CDDL-1.0": {
+        "licenseType": "CDDL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CPOL-1.02": {
+        "licenseType": "CPOL-1.02",
+        "severity": "high",
+        "instructions": ""
+      },
+      "EPL-1.0": {
+        "licenseType": "EPL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "GPL-2.0": {
+        "licenseType": "GPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "GPL-3.0": {
+        "licenseType": "GPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "LGPL-2.0": {
+        "licenseType": "LGPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "LGPL-3.0": {
+        "licenseType": "LGPL-3.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-1.1": {
+        "licenseType": "MPL-1.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-2.0": {
+        "licenseType": "MPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MS-RL": {
+        "licenseType": "MS-RL",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "SimPL-2.0": {
+        "licenseType": "SimPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "LGPL-2.1": {
+        "licenseType": "LGPL-2.1",
+        "severity": "medium",
+        "instructions": ""
+      }
+    }
+  },
+  "packageManager": "maven",
+  "ignoreSettings": {
+    "adminOnly": false,
+    "reasonRequired": true,
+    "disregardFilesystemIgnores": false
+  },
+  "summary": "9 vulnerable dependency paths",
+  "remediation": {
+    "unresolved": [
+      {
+        "id": "SNYK-JAVA-IOUNDERTOW-7433721",
+        "title": "Memory Leak",
+        "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+        "credit": [
+          "Unknown"
+        ],
+        "semver": {
+          "vulnerable": [
+            "[0,]"
+          ]
+        },
+        "exploit": "Not Defined",
+        "fixedIn": [],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "java",
+        "severity": "low",
+        "cvssScore": 2.3,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "io.undertow:undertow-core",
+        "references": [
+          {
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2274437",
+            "title": "Red Hat Bugzilla Bug"
+          },
+          {
+            "url": "https://access.redhat.com/errata/RHSA-2024:4392",
+            "title": "Red Hat Security Advisory"
+          },
+          {
+            "url": "https://github.com/undertow-io/undertow/blob/2.3.14.Final/core/src/main/java/io/undertow/Handlers.java%23L562",
+            "title": "Vulnerable Code"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "cvssV3BaseScore": 5.3,
+            "modificationTime": "2024-08-09T13:34:05.805132Z"
+          }
+        ],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+            "assigner": "Snyk",
+            "severity": "low",
+            "baseScore": 2.3,
+            "cvssVersion": "4.0",
+            "modificationTime": "2024-07-10T14:39:24.891744Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+            "assigner": "Snyk",
+            "severity": "low",
+            "baseScore": 3.1,
+            "cvssVersion": "3.1",
+            "modificationTime": "2024-07-10T14:39:24.891744Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "assigner": "Red Hat",
+            "severity": "medium",
+            "baseScore": 5.3,
+            "cvssVersion": "3.1",
+            "modificationTime": "2024-08-09T13:34:05.805132Z"
+          }
+        ],
+        "description": "## Overview\n[io.undertow:undertow-core](https://mvnrepository.com/artifact/io.undertow/undertow-core) is a Java web server based on non-blocking IO.\n\nAffected versions of this package are vulnerable to Memory Leak when the `learning-push` handler is configured with the default `maxAge` of `-1`. An attacker who can send normal HTTP requests may consume excessive memory.\r\n\r\n## Workaround\r\nThis vulnerability can be avoided by setting a value for `maxAge` that is not `-1`.\n## Remediation\nThere is no fixed version for `io.undertow:undertow-core`.\n\n## References\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2274437)\n- [Red Hat Security Advisory](https://access.redhat.com/errata/RHSA-2024:4392)\n- [Vulnerable Code](https://github.com/undertow-io/undertow/blob/2.3.14.Final/core/src/main/java/io/undertow/Handlers.java#L562)\n",
+        "epssDetails": {
+          "percentile": "0.10901",
+          "probability": "0.00044",
+          "modelVersion": "v2023.03.01"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2024-3653"
+          ],
+          "CWE": [
+            "CWE-401"
+          ],
+          "GHSA": [
+            "GHSA-ch7q-gpff-h9hp"
+          ]
+        },
+        "packageName": "io.undertow:undertow-core",
+        "proprietary": false,
+        "creationTime": "2024-07-10T07:43:42.505449Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2024-07-09T00:31:40Z",
+        "exploitDetails": {
+          "sources": [],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Not Defined",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Not Defined",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "maven",
+        "mavenModuleName": {
+          "groupId": "io.undertow",
+          "artifactId": "undertow-core"
+        },
+        "publicationTime": "2024-07-10T14:39:24.891304Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2024-08-09T13:34:05.805132Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "io.snyk:log4shell-server@0.1.3",
+          "io.undertow:undertow-core@2.3.14.Final"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "io.undertow:undertow-core",
+        "version": "2.3.14.Final",
+        "severityWithCritical": "low"
+      },
+      {
+        "id": "SNYK-JAVA-IOUNDERTOW-7707751",
+        "title": "Race Condition",
+        "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L",
+        "credit": [
+          "Unknown"
+        ],
+        "semver": {
+          "vulnerable": [
+            "[0,]"
+          ]
+        },
+        "exploit": "Not Defined",
+        "fixedIn": [],
+        "patches": [],
+        "insights": {
+          "triageAdvice": null
+        },
+        "language": "java",
+        "severity": "medium",
+        "cvssScore": 6.9,
+        "functions": [],
+        "malicious": false,
+        "isDisputed": false,
+        "moduleName": "io.undertow:undertow-core",
+        "references": [
+          {
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2305290",
+            "title": "Red Hat Bugzilla Bug"
+          }
+        ],
+        "cvssDetails": [
+          {
+            "assigner": "NVD",
+            "severity": "high",
+            "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "cvssV3BaseScore": 7.5,
+            "modificationTime": "2024-08-24T01:12:26.277956Z"
+          }
+        ],
+        "cvssSources": [
+          {
+            "type": "primary",
+            "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:L/SC:N/SI:N/SA:N",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 6.9,
+            "cvssVersion": "4.0",
+            "modificationTime": "2024-08-18T13:48:54.310148Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:L",
+            "assigner": "Snyk",
+            "severity": "medium",
+            "baseScore": 6.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2024-08-18T13:48:54.310148Z"
+          },
+          {
+            "type": "secondary",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "assigner": "NVD",
+            "severity": "high",
+            "baseScore": 7.5,
+            "cvssVersion": "3.1",
+            "modificationTime": "2024-08-24T01:12:26.277956Z"
+          }
+        ],
+        "description": "## Overview\n[io.undertow:undertow-core](https://mvnrepository.com/artifact/io.undertow/undertow-core) is a Java web server based on non-blocking IO.\n\nAffected versions of this package are vulnerable to Race Condition due to the reuse of the `StringBuilder` instance in the `ProxyProtocolReadListener` across multiple requests. An attacker can access data from previous requests or responses by exploiting the shared usage of the `StringBuilder`.\r\n\r\nThis vulnerability primarily results in errors and connection termination but creates a risk of data leakage in multi-request environments.\n## Remediation\nThere is no fixed version for `io.undertow:undertow-core`.\n\n## References\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2305290)\n",
+        "epssDetails": {
+          "percentile": "0.21908",
+          "probability": "0.00053",
+          "modelVersion": "v2023.03.01"
+        },
+        "identifiers": {
+          "CVE": [
+            "CVE-2024-7885"
+          ],
+          "CWE": [
+            "CWE-362"
+          ]
+        },
+        "packageName": "io.undertow:undertow-core",
+        "proprietary": false,
+        "creationTime": "2024-08-18T13:26:45.492443Z",
+        "functions_new": [],
+        "alternativeIds": [],
+        "disclosureTime": "2024-08-07T00:00:00Z",
+        "exploitDetails": {
+          "sources": [],
+          "maturityLevels": [
+            {
+              "type": "secondary",
+              "level": "Not Defined",
+              "format": "CVSSv3"
+            },
+            {
+              "type": "primary",
+              "level": "Not Defined",
+              "format": "CVSSv4"
+            }
+          ]
+        },
+        "packageManager": "maven",
+        "mavenModuleName": {
+          "groupId": "io.undertow",
+          "artifactId": "undertow-core"
+        },
+        "publicationTime": "2024-08-18T13:44:23.906447Z",
+        "severityBasedOn": "CVSS",
+        "modificationTime": "2024-08-24T01:12:26.277956Z",
+        "socialTrendAlert": false,
+        "packagePopularityRank": 99,
+        "from": [
+          "io.snyk:log4shell-server@0.1.3",
+          "io.undertow:undertow-core@2.3.14.Final"
+        ],
+        "upgradePath": [],
+        "isUpgradable": false,
+        "isPatchable": false,
+        "isPinnable": false,
+        "isRuntime": false,
+        "name": "io.undertow:undertow-core",
+        "version": "2.3.14.Final",
+        "severityWithCritical": "medium"
+      }
+    ],
+    "upgrade": {
+      "com.unboundid:unboundid-ldapsdk@3.1.1": {
+        "upgradeTo": "com.unboundid:unboundid-ldapsdk@4.0.5",
+        "upgrades": [
+          "com.unboundid:unboundid-ldapsdk@3.1.1"
+        ],
+        "vulns": [
+          "SNYK-JAVA-COMUNBOUNDID-32143"
+        ]
+      },
+      "commons-collections:commons-collections@3.1": {
+        "upgradeTo": "commons-collections:commons-collections@3.2.2",
+        "upgrades": [
+          "commons-collections:commons-collections@3.1",
+          "commons-collections:commons-collections@3.1",
+          "commons-collections:commons-collections@3.1"
+        ],
+        "vulns": [
+          "SNYK-JAVA-COMMONSCOLLECTIONS-30078",
+          "SNYK-JAVA-COMMONSCOLLECTIONS-472711",
+          "SNYK-JAVA-COMMONSCOLLECTIONS-6056408"
+        ]
+      },
+      "org.apache.logging.log4j:log4j-core@2.15.0": {
+        "upgradeTo": "org.apache.logging.log4j:log4j-core@2.17.1",
+        "upgrades": [
+          "org.apache.logging.log4j:log4j-core@2.15.0",
+          "org.apache.logging.log4j:log4j-core@2.15.0",
+          "org.apache.logging.log4j:log4j-core@2.15.0"
+        ],
+        "vulns": [
+          "SNYK-JAVA-ORGAPACHELOGGINGLOG4J-2327339",
+          "SNYK-JAVA-ORGAPACHELOGGINGLOG4J-2321524",
+          "SNYK-JAVA-ORGAPACHELOGGINGLOG4J-2320014"
+        ]
+      }
+    },
+    "patch": {},
+    "ignore": {},
+    "pin": {}
+  },
+  "filesystemPolicy": false,
+  "filtered": {
+    "ignore": [],
+    "patch": []
+  },
+  "uniqueCount": 9,
+  "projectName": "io.snyk:log4shell-server",
+  "displayTargetFile": "pom.xml",
+  "hasUnknownVersions": false,
+  "path": "/Users/austindoll/Documents/GitHub/java-goof/log4shell-goof/log4shell-server"
+}

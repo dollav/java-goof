@@ -1,0 +1,6 @@
+FROM debian:11-slim
+
+From python@sha256:603879aeff06df23f0d392a19f7ce02aa85e14e6b4d25fd9647b116e0cb93467
+
+RUN apt-get update
+RUN apt install linux-libc-dev
