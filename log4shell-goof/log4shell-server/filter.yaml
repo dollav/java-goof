@@ -1,0 +1,5 @@
+version: 2
+customFilters:
+  filter: ".vulnerabilities |= map(if (.disclosureTime < (now - (3000 * 86400) | todateiso8601)) then . else empty end)"
+  pass: "[.vulnerabilities[] | select(.severity == \"low\")] | length"
+  msg: "Vulnerabilities found"
