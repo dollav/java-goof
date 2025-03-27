@@ -7,13 +7,16 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
+    <distributionManagement>
         <repository>
-            <id>snapshots</id>
+            <id>releases</id> <name>Releases repo</name>
+            <url>https://adolltesting.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id> <name>Snapshots</name>
             <url>https://adolltesting.com/repository/maven-snapshots/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
+        </snapshotRepository>
+    </distributionManagement>
 
   <artifactId>log4shell-client</artifactId>
   <version>0.0.1-SNAPSHOT</version>
@@ -26,9 +29,6 @@
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
   </properties>
-
-
-
 
 
   <dependencies>
