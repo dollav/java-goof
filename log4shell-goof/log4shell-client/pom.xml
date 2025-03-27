@@ -7,6 +7,14 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
+        <repository>
+            <id>snapshots</id>
+            <url>https://adolltesting.com/repository/maven-snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+
   <artifactId>log4shell-client</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
@@ -19,7 +27,16 @@
     <maven.compiler.target>8</maven.compiler.target>
   </properties>
 
+
+
+
+
   <dependencies>
+      <dependency>
+      <groupId>io.snyk</groupId>
+      <artifactId>log4shell-server</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>

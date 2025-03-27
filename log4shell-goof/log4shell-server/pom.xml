@@ -16,6 +16,17 @@
     <maven.compiler.target>8</maven.compiler.target>
   </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>releases</id> <name>Releases repo</name>
+            <url>https://adolltesting.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id> <name>Snapshots</name>
+            <url>https://adolltesting.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
   <dependencies>
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
