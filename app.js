@@ -17,6 +17,7 @@ var session = require('express-session')
 var methodOverride = require('method-override');
 var logger = require('morgan');
 var errorHandler = require('errorhandler');
+var helmet = require('helmet');
 var optional = require('optional');
 var marked = require('marked');
 var fileUpload = require('express-fileupload');
@@ -77,6 +78,7 @@ app.locals.marked = marked;
 
 // development only
 if (app.get('env') == 'development') {
+  app.use(helmet());
   app.use(errorHandler());
 }
 
