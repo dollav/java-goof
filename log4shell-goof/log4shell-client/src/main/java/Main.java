@@ -24,6 +24,7 @@ public class Main {
             .filter(entry -> ((String)entry.getKey()).startsWith("java.vm."))
             .forEach(System.out::println);
         System.out.println("---------------------------------");
+        System.out.println("TEST");
     }
 
     public static void checkTmp(boolean shouldExist) {
