@@ -13,12 +13,12 @@
       <snapshotRepository>
           <id>privatedeps</id>
           <name>snapshots</name>
-          <url>http://52.207.113.17:8081/nexus/content/repositories/snapshots</url>
+          <url>http://35.171.191.69:8081/nexus/content/repositories/snapshots</url>
       </snapshotRepository>
 
       <repository>
           <id>privatedeps</id>
-          <url>http://52.207.113.17:8081/nexus/content/repositories/releases</url>
+          <url>http://35.171.191.69:8081/nexus/content/repositories/releases</url>
       </repository>
    
 </distributionManagement>
@@ -47,7 +47,7 @@
         <groupId>org.springframework</groupId>
         <artifactId>spring-aspects</artifactId>
         <version>${spring.version}</version>
-    </dependency>
+        </dependency>
 
         <!-- AOP dependency -->
         <dependency>

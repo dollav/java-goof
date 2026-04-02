@@ -1,6 +1,4 @@
-From python:3.10.12-slim
+FROM python:3.7-slim-bullseye
 
 RUN apt-get update
-RUN apt-get install libkrb5support0 -y
-
-RUN ["sleep", "1"]
+RUN apt install linux-libc-dev
